@@ -27,7 +27,7 @@ public class BottomWallScript : MonoBehaviour {
 	}
 
 	void gameOver(){
-		Application.LoadLevel ("Untitled");
+		Application.LoadLevel ("GameOver");
 	}
 
 }
