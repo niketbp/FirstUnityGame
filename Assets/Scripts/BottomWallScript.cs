@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BottomWallScript : MonoBehaviour {
 
-	public int lives = 0;
+	public static int lives = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +18,13 @@ public class BottomWallScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 		if (collision.gameObject.tag == "Ball") {
-			Application.LoadLevel ("level1");
 			if (lives == 0) {
 				gameOver ();
+			} 
+			else {
+				--lives;
+				Application.LoadLevel ("level1");
 			}
-			print ("reached");
 		}
 	}
 
