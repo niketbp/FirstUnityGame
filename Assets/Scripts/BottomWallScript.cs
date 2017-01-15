@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BottomWallScript : MonoBehaviour {
 
-	public static int lives = 1;
+	private const int numLives = 1;
+	public static int lives = numLives;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +20,7 @@ public class BottomWallScript : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision){
 		if (collision.gameObject.tag == "Ball") {
 			if (lives == 0) {
+				lives = numLives;
 				gameOver ();
 			} 
 			else {
