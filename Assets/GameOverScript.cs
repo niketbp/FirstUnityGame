@@ -11,10 +11,16 @@ public class GameOverScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		scoreText.text = "Score: " + score;
+		resetGame ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	private void resetGame(){
+		UIManagerScript.score = 0;
+		UIManagerScript.lives = UIManagerScript.numLives;
 	}
 }
