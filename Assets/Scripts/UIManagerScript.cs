@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIManagerScript : MonoBehaviour {
 
-	int score = 0;
+	public static int score = 0;
 	public Text scoreText;
 
 	private const int numLives = 1;
