@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BottomWallScript : MonoBehaviour {
 
-	private const int numLives = 1;
-	public static int lives = numLives;
+	public UIManagerScript ui;
+
+//	private const int numLives = 1;
+//	public static int lives = numLives;
 
 	// Use this for initialization
 	void Start () {
-		
+		ui = GameObject.FindWithTag ("UI").GetComponent<UIManagerScript> ();
 	}
 	
 	// Update is called once per frame
@@ -19,19 +21,10 @@ public class BottomWallScript : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision){
 		if (collision.gameObject.tag == "Ball") {
-			if (lives == 0) {
-				lives = numLives;
-				gameOver ();
-			} 
-			else {
-				--lives;
-				Application.LoadLevel ("level1");
-			}
+			ui.checkLives ();
 		}
 	}
 
-	void gameOver(){
-		Application.LoadLevel ("GameOver");
-	}
+
 
 }
