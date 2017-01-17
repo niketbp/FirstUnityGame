@@ -8,7 +8,7 @@ public class UIManagerScript : MonoBehaviour {
 	public static int score = 0;
 	public Text scoreText;
 
-	public static int numLives = 2;
+	public static int numLives = 3;
 	public static int lives = numLives;
 	public Text livesText;
 
